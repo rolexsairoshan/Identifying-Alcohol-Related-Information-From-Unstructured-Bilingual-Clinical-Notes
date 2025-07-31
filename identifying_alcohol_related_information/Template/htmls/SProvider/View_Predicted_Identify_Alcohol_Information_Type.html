@@ -1,0 +1,108 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p align="center" class="text-uppercase pull-center style1">View Identifying Alcohol Related Information Type </p>
+                            <hr>
+                            <div class="tweettext">
+                               <table border="5" align="center" bordercolor="#FF00FF">
+                               <tr>
+                                   <td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">Fid</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">pid</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">gender</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">age</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">hypertension</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">heart_disease</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">clinical_note</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">ever_married</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">work_type</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">Residence_type</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">avg_glucose_level</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">bmi</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">smoking_status</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">stroke</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">Prediction</span></div></td>
+
+                      </tr>
+                            {% for object in list_objects %}
+                      <tr>
+
+                          <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.Fid}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.pid}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.gender}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.age}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.hypertension}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.heart_disease}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.clinical_note}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.ever_married}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.work_type}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.Residence_type}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.avg_glucose_level}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.bmi}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.smoking_status}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.stroke}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.Prediction}}</td>
+
+                        </tr>
+
+                                        {% endfor %}
+                      </table>
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
